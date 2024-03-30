@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
+import Navbar from "./components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="p-10 w-full">
+        <div className="overlay"></div>
+        <video
+          src={"/bgvideo.mp4"}
+          autoPlay
+          muted
+          className="w-full h-full object-cover"
+        />
+        <div className="pt-10 px-36 w-full content text-white">
+          <Navbar />
           <Providers>{children}</Providers>
         </div>
       </body>
