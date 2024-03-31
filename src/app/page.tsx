@@ -157,7 +157,7 @@ export default function Home() {
                 Need help?
               </Text>
               <Text style={{ color: "black" }}>
-                Don't worry, we are always available!
+                {"Don't worry, we are always available!"}
               </Text>
               <Button
                 className="w-fit"
@@ -177,7 +177,11 @@ export default function Home() {
         style={{ borderRadius: "30px 30px 0 0" }}
       >
         <HStack className="w-full justify-center" spacing={40}>
-          <Image src="/logo-LG.svg" style={{ width: 72 }} />
+          <Image
+            alt={"/logo-LG.svg"}
+            src="/logo-LG.svg"
+            style={{ width: 72 }}
+          />
 
           <List spacing={3}>
             <ListItem>
