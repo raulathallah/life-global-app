@@ -50,6 +50,7 @@ export default function Trip() {
           <HStack spacing={12}>
             {trip.map((att) => (
               <Card
+                key={att.id}
                 maxW="md"
                 h={600}
                 borderRadius={"20px"}
@@ -59,6 +60,7 @@ export default function Trip() {
                 <Image
                   src={att.image}
                   h={350}
+                  alt={att.image}
                   objectFit={"cover"}
                   borderRadius={"20px 20px 0 0"}
                 />
@@ -73,7 +75,7 @@ export default function Trip() {
                   <Text>{att.description}</Text>
                   <UnorderedList>
                     {att.place.map((e, i) => {
-                      return <ListItem>{e}</ListItem>;
+                      return <ListItem key={e}>{e}</ListItem>;
                     })}
                   </UnorderedList>
                   <Text

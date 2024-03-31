@@ -83,6 +83,7 @@ export default function ContactUs() {
               src="/tropical_2.jpg"
               maxW={300}
               h={600}
+              alt="tropical_2.jpg"
               objectFit={"cover"}
             />
           </Reveal>
@@ -91,6 +92,7 @@ export default function ContactUs() {
               src="/tropical_3.jpg"
               maxW={300}
               h={600}
+              alt="/tropical_3.jpg"
               objectFit={"cover"}
             />
           </Reveal>
@@ -99,6 +101,7 @@ export default function ContactUs() {
               src="/tropical_4.jpg"
               maxW={300}
               h={600}
+              alt="/tropical_4.jpg"
               objectFit={"cover"}
             />
           </Reveal>

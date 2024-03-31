@@ -23,7 +23,6 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
 import Reveal from "./components/Reveal";
-import img1 from "../../assets/images/tropical_3.jpg";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
