@@ -16,7 +16,7 @@ import { PhoneIcon } from "@chakra-ui/icons";
 export default function ContactUs() {
   return (
     <div className="">
-      <HStack spacing={24} className="p-8 gap-8">
+      <HStack spacing={24} className="p-8 gap-8 justify-between">
         <Reveal>
           <div className="grid gap-4">
             <Reveal delay={0.2}>
@@ -28,8 +28,9 @@ export default function ContactUs() {
                 direction={{ base: "column", sm: "row" }}
                 overflow="hidden"
                 variant={"elevated"}
-                w={500}
+                w={400}
                 maxH={100}
+                style={{ borderRadius: "20px" }}
                 className="align-middle items-center px-6 py-2"
               >
                 <FaWhatsapp color={"teal"} className="text-3xl" />
@@ -45,8 +46,9 @@ export default function ContactUs() {
                 direction={{ base: "column", sm: "row" }}
                 overflow="hidden"
                 variant={"elevated"}
-                w={500}
+                w={400}
                 maxH={100}
+                style={{ borderRadius: "20px" }}
                 className="align-middle items-center px-6 py-2"
               >
                 <IoIosMail color={"teal"} className="text-3xl" />
@@ -62,8 +64,9 @@ export default function ContactUs() {
                 direction={{ base: "column", sm: "row" }}
                 overflow="hidden"
                 variant={"elevated"}
-                w={500}
+                w={400}
                 maxH={100}
+                style={{ borderRadius: "20px" }}
                 className="align-middle items-center px-6 py-2"
               >
                 <PhoneIcon color={"teal"} className="text-3xl" />

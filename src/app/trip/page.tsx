@@ -37,13 +37,15 @@ export default function Trip() {
             <Text className="">
               We have 3 package that you can choose for tropical holiday!
             </Text>
-            <Button
-              className="w-fit"
-              leftIcon={<PhoneIcon />}
-              colorScheme="teal"
-            >
-              BOOK TRIP NOW
-            </Button>
+            <a href="/contact-us">
+              <Button
+                className="w-fit"
+                leftIcon={<PhoneIcon />}
+                colorScheme="teal"
+              >
+                BOOK TRIP NOW
+              </Button>
+            </a>
           </div>
         </Reveal>
         <Reveal>
