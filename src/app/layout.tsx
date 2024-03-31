@@ -24,6 +24,7 @@ export default function RootLayout({
           src={"/bgvideo.mp4"}
           autoPlay
           muted
+          loop
           className="w-full h-full object-cover"
         />
         <div className="pt-10 px-36 w-full content text-white">

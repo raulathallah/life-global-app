@@ -23,13 +23,13 @@ export default function Navbar() {
         onClick={() => router.push("/")}
       />
       <HStack spacing={48}>
-        <Link href="#" className="navbar-link">
+        <Link href="/trip" className="navbar-link">
           Our Trip
         </Link>
-        <Link href="#" className="navbar-link">
+        <Link href="/contact-us" className="navbar-link">
           Contact Us
         </Link>
-        <Link href="#" className="navbar-link">
+        <Link href="/privacy-policy" className="navbar-link">
           Privacy Policy
         </Link>
       </HStack>
