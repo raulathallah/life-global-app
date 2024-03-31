@@ -157,7 +157,7 @@ export default function Home() {
                 Need help?
               </Text>
               <Text style={{ color: "black" }}>
-                {"Don't worry, we are always available!"}
+                {"We are always available!"}
               </Text>
               <Button
                 className="w-fit"
