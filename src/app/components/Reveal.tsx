@@ -1,6 +1,12 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-const Reveal = ({ children }: { children: React.ReactNode }) => {
+const Reveal = ({
+  children,
+  delay,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -26,7 +32,7 @@ const Reveal = ({ children }: { children: React.ReactNode }) => {
             opacity: 1,
             transition: {
               duration: 0.5,
-              delay: 0.2,
+              delay: delay ? delay : 0.2,
             },
           },
         }}

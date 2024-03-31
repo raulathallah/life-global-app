@@ -152,6 +152,7 @@ export default function Home() {
           style={{ borderRadius: 12, height: 600 }}
         >
           <HStack spacing={128} className="w-full justify-center">
+            <Image src={"../contact-us.svg"} style={{ width: 500 }} />
             <VStack spacing={12} className="">
               <Text className="text-3xl font-medium" style={{ color: "teal" }}>
                 Need help?
@@ -168,7 +169,6 @@ export default function Home() {
                 CONTACT US
               </Button>
             </VStack>
-            <Image src={"../contact-us.svg"} style={{ width: 500 }} />
           </HStack>
         </div>
       </Reveal>

@@ -13,10 +13,7 @@ import { useRouter } from "next/navigation";
 export default function Navbar() {
   const router = useRouter();
   return (
-    <Box
-      className="flex justify-between gap-8 hover:cursor-pointer"
-      style={{ borderBottom: "1px solid white" }}
-    >
+    <Box className="flex justify-between gap-8 hover:cursor-pointer">
       <Image
         src="/logo-LG.svg"
         style={{ width: 58 }}
