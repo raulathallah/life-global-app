@@ -31,23 +31,23 @@ export default function Home() {
   return (
     <div className="w-full">
       <Reveal>
-        <header className="w-full text-center p-36 my-28 flex flex-col gap-12 items-center">
+        <header className="w-full text-center p-36 lg:my-28 flex flex-col gap-12 items-center">
           <TypeAnimation
             sequence={[
               "Holiday?",
               1000,
-              "Tropical destination?",
+              "Tropical?",
               1000,
               `Life Global.`,
               12000,
             ]}
             wrapper="span"
             speed={20}
-            className="italic text-8xl font-bold"
+            className="italic text-4xl lg:text-8xl font-bold"
             style={{ display: "inline-block" }}
             repeat={Infinity}
           />
-          <Text className="text-xl">
+          <Text className="text-base lg:text-xl">
             We provide a tropical family trip around the world with the best
             holiday and genuine ethnicity experience.
           </Text>
@@ -65,7 +65,7 @@ export default function Home() {
       <Reveal>
         <div
           className="bg-white w-full p-12 flex flex-col gap-12"
-          style={{ color: "teal", borderRadius: 12, height: 600 }}
+          style={{ color: "teal", height: 600 }}
         >
           <Text className="text-3xl font-medium text-center">Our Value</Text>
           <HStack spacing={0} className="justify-center">
@@ -76,13 +76,13 @@ export default function Home() {
                 variant={"elevated"}
                 maxW={600}
                 maxH={100}
-                className="align-middle items-center p-3"
+                className="align-middle items-center p-3 w-full"
               >
-                <LockIcon boxSize={12} color={"teal"} />
+                <LockIcon className="text-3xl" color={"teal"} />
                 <Stack>
                   <CardBody>
                     <Heading size="md">Safe & Secure</Heading>
-                    <Text py="2" className="text-sm">
+                    <Text className="text-xs mt-2">
                       Our services are secure and safe. We do have many trusted
                       partners to support our trip services.
                     </Text>
@@ -95,16 +95,15 @@ export default function Home() {
                 variant={"elevated"}
                 maxW={600}
                 maxH={100}
-                className="align-middle items-center p-3"
+                className="align-middle items-center p-3 w-full"
               >
-                <CheckCircleIcon boxSize={12} color={"teal"} />
+                <CheckCircleIcon className="text-3xl" color={"teal"} />
                 <Stack>
                   <CardBody>
                     <Heading size="md">Complete</Heading>
-                    <Text py="2" className="text-sm">
-                      There is no need to ask about our experience. We have
-                      already brought more than 50+ participants in our services
-                      to 120+ tropical places around the world.
+                    <Text className="text-xs mt-2">
+                      We have already brought participants to 120+ tropical
+                      places around the world.
                     </Text>
                   </CardBody>
                 </Stack>
@@ -115,13 +114,13 @@ export default function Home() {
                 variant={"elevated"}
                 maxW={600}
                 maxH={100}
-                className="align-middle items-center p-3"
+                className="align-middle items-center p-3 w-full"
               >
-                <MoonIcon boxSize={12} color={"teal"} />
+                <MoonIcon className="text-3xl" color={"teal"} />
                 <Stack>
                   <CardBody>
                     <Heading size="md">Comfort</Heading>
-                    <Text py="2" className="text-sm">
+                    <Text className="text-xs mt-2">
                       Participants comfort is always number one. We provide
                       excellent accommodation and transportation.
                     </Text>
@@ -132,27 +131,26 @@ export default function Home() {
 
             <Image
               src={"./tropical_1.jpg"}
-              h={400}
-              w={"100%"}
               objectFit={"cover"}
               style={{
                 borderRadius: 20,
                 padding: 10,
                 border: "1px solid gainsboro",
               }}
+              className="w-0 h-0 lg:h-[400px] lg:w-full opacity-0 lg:opacity-100"
             />
           </HStack>
         </div>
       </Reveal>
 
       <Reveal>
-        <div
-          className="bg-white w-full flex flex-col gap-12"
-          style={{ borderRadius: 12, height: 600 }}
-        >
-          <HStack spacing={128} className="w-full justify-center">
-            <Image src={"../contact-us.svg"} style={{ width: 500 }} />
-            <VStack spacing={12} className="">
+        <div style={{ height: 600 }}>
+          <div className="w-full grid lg:flex lg:gap-48 justify-center">
+            <Image
+              src={"../contact-us.svg"}
+              className="w-[300px] lg:w-[550px] place-self-center"
+            />
+            <div className="text-center lg:text-left place-self-center">
               <Text className="text-3xl font-medium" style={{ color: "teal" }}>
                 Need help?
               </Text>
@@ -160,23 +158,20 @@ export default function Home() {
                 {"We are always available!"}
               </Text>
               <Button
-                className="w-fit"
+                className="w-fit mt-6"
                 rightIcon={<ArrowForwardIcon />}
                 colorScheme="teal"
                 onClick={() => router.push("/contact-us")}
               >
                 CONTACT US
               </Button>
-            </VStack>
-          </HStack>
+            </div>
+          </div>
         </div>
       </Reveal>
 
-      <div
-        className="bg-teal-600 w-full p-8"
-        style={{ borderRadius: "30px 30px 0 0" }}
-      >
-        <HStack className="w-full justify-center" spacing={40}>
+      <div className="bg-teal-600 w-full p-8">
+        <div className="flex justify-between w-full lg:px-36">
           <Image
             alt={"/logo-LG.svg"}
             src="/logo-LG.svg"
@@ -211,7 +206,7 @@ export default function Home() {
               </Link>
             </HStack>
           </VStack>
-        </HStack>
+        </div>
       </div>
     </div>
   );

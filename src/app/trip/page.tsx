@@ -49,35 +49,43 @@ export default function Trip() {
           </div>
         </Reveal>
         <Reveal>
-          <HStack spacing={12}>
+          <div className="grid lg:flex gap-2 lg:gap-12 lg:w-[1200px]">
             {trip.map((att) => (
               <Card
                 key={att.id}
-                maxW="md"
-                h={600}
+                w={{ sm: 500 }}
+                h={{ lg: 320, sm: 140 }}
                 borderRadius={"20px"}
-                className="w-full"
+                className="w-[100%]"
+                direction={{ base: "row", lg: "column" }}
                 variant={"elevate"}
               >
                 <Image
                   src={att.image}
-                  h={350}
                   alt={att.image}
                   objectFit={"cover"}
-                  borderRadius={"20px 20px 0 0"}
+                  className="lg:h-[100px] w-[200px] lg:w-full"
+                  borderRadius={{
+                    lg: "20px 20px 0 0",
+                    sm: "20px 0px 0px 20px",
+                  }}
                 />
                 <CardBody className="flex flex-col gap-2">
                   <Text
-                    className="text-3xl font-bold italic"
+                    className="text-xl font-bold italic"
                     style={{ color: "teal" }}
                     textShadow={"lg"}
                   >
                     {att.name}
                   </Text>
-                  <Text>{att.description}</Text>
+                  <Text className="text-xs">{att.description}</Text>
                   <UnorderedList>
                     {att.place.map((e, i) => {
-                      return <ListItem key={e}>{e}</ListItem>;
+                      return (
+                        <ListItem key={e} className="text-xs lg:text-base">
+                          {e}
+                        </ListItem>
+                      );
                     })}
                   </UnorderedList>
                   <Text
@@ -90,7 +98,7 @@ export default function Trip() {
                 </CardBody>
               </Card>
             ))}
-          </HStack>
+          </div>
         </Reveal>
       </VStack>
     </div>

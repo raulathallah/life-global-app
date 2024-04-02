@@ -18,16 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " h-fit"}>
+      <body className={inter.className + ""}>
         <div className="overlay"></div>
         <video
           src={"/bgvideo.mp4"}
           autoPlay
           muted
           loop
-          className="w-full h-full object-cover"
+          className="w-screen overflow-clip object-cover h-screen"
         />
-        <div className="pt-10 px-36 w-full content text-white">
+        <div className="w-full content text-white">
           <Navbar />
           <Providers>{children}</Providers>
         </div>

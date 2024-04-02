@@ -16,7 +16,37 @@ import { PhoneIcon } from "@chakra-ui/icons";
 export default function ContactUs() {
   return (
     <div className="">
-      <HStack spacing={24} className="p-8 gap-8 justify-between">
+      <div className="flex flex-col p-8 gap-8 justify-between">
+        <HStack spacing={0} className="">
+          <Reveal delay={0.2}>
+            <Image
+              src="/tropical_2.jpg"
+              w={300}
+              h={{ sm: 200 }}
+              alt="tropical_2.jpg"
+              objectFit={"cover"}
+            />
+          </Reveal>
+          <Reveal delay={0.4}>
+            <Image
+              src="/tropical_3.jpg"
+              w={300}
+              maxW={300}
+              h={{ sm: 200 }}
+              alt="/tropical_3.jpg"
+              objectFit={"cover"}
+            />
+          </Reveal>
+          <Reveal delay={0.6}>
+            <Image
+              src="/tropical_4.jpg"
+              w={300}
+              h={{ sm: 200 }}
+              alt="/tropical_4.jpg"
+              objectFit={"cover"}
+            />
+          </Reveal>
+        </HStack>
         <Reveal>
           <div className="grid gap-4">
             <Reveal delay={0.2}>
@@ -79,37 +109,7 @@ export default function ContactUs() {
             </Reveal>
           </div>
         </Reveal>
-
-        <HStack spacing={0} className="p-8 gap-8">
-          <Reveal delay={0.2}>
-            <Image
-              src="/tropical_2.jpg"
-              maxW={300}
-              h={600}
-              alt="tropical_2.jpg"
-              objectFit={"cover"}
-            />
-          </Reveal>
-          <Reveal delay={0.4}>
-            <Image
-              src="/tropical_3.jpg"
-              maxW={300}
-              h={600}
-              alt="/tropical_3.jpg"
-              objectFit={"cover"}
-            />
-          </Reveal>
-          <Reveal delay={0.6}>
-            <Image
-              src="/tropical_4.jpg"
-              maxW={300}
-              h={600}
-              alt="/tropical_4.jpg"
-              objectFit={"cover"}
-            />
-          </Reveal>
-        </HStack>
-      </HStack>
+      </div>
     </div>
   );
 }
