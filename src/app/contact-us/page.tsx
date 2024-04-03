@@ -12,103 +12,86 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import Reveal from "../components/Reveal";
 import { PhoneIcon } from "@chakra-ui/icons";
+import { useEffect, useState } from "react";
+
+const contact = [
+  {
+    icon: <FaWhatsapp color={"teal"} className="text-3xl" />,
+    text: "+62-856-555-341",
+  },
+  {
+    icon: <IoIosMail color={"teal"} className="text-3xl" />,
+    text: "life.global@gmail.com",
+  },
+  {
+    icon: <PhoneIcon color={"teal"} className="text-3xl" />,
+    text: "021-22839201",
+  },
+];
 
 export default function ContactUs() {
+  const [trip, setTrip] = useState<Trip[]>([]);
+  const getTrip = async () => {
+    const response = await fetch("trip.json");
+    const res = await response.json();
+    setTrip(res);
+  };
+  useEffect(() => {
+    getTrip();
+  }, []);
   return (
     <div className="">
-      <div className="flex flex-col p-8 gap-8 justify-between">
-        <HStack spacing={0} className="">
-          <Reveal delay={0.2}>
-            <Image
-              src="/tropical_2.jpg"
-              w={300}
-              h={{ sm: 200 }}
-              alt="tropical_2.jpg"
-              objectFit={"cover"}
-            />
-          </Reveal>
-          <Reveal delay={0.4}>
-            <Image
-              src="/tropical_3.jpg"
-              w={300}
-              maxW={300}
-              h={{ sm: 200 }}
-              alt="/tropical_3.jpg"
-              objectFit={"cover"}
-            />
-          </Reveal>
-          <Reveal delay={0.6}>
-            <Image
-              src="/tropical_4.jpg"
-              w={300}
-              h={{ sm: 200 }}
-              alt="/tropical_4.jpg"
-              objectFit={"cover"}
-            />
-          </Reveal>
+      <div className="flex flex-col p-8 gap-8 justify-between lg:justify-center lg:grid grid-flow-col">
+        <HStack
+          spacing={0}
+          style={{ border: "1px solid white" }}
+          className="p-2 w-fit"
+        >
+          {trip.map((att) => (
+            <Reveal delay={0}>
+              <Image
+                src={att.image}
+                w={300}
+                h={{ sm: 200, lg: 600 }}
+                alt={att.image}
+                objectFit={"cover"}
+              />
+            </Reveal>
+          ))}
         </HStack>
-        <Reveal>
-          <div className="grid gap-4">
-            <Reveal delay={0.2}>
-              <Text className="text-4xl font-bold">Contact Us</Text>
-              <Text className="">24/7 available through several contact.</Text>
-            </Reveal>
-            <Reveal delay={0.4}>
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <Reveal delay={0.2}>
+            <Text
+              className="text-4xl font-bold text-center"
+              style={{ color: "teal" }}
+            >
+              Contact Us
+            </Text>
+            <Text className="text-center" style={{ color: "black" }}>
+              24/7 available through several contact.
+            </Text>
+          </Reveal>
+          {contact.map((att, i) => (
+            <Reveal delay={0.4 * i} key={i}>
               <Card
                 direction={{ base: "column", sm: "row" }}
                 overflow="hidden"
-                variant={"elevated"}
+                variant={"outline"}
                 w={400}
                 maxH={100}
                 style={{ borderRadius: "20px" }}
-                className="align-middle items-center px-6 py-2"
+                className="align-middle items-center px-6"
               >
-                <FaWhatsapp color={"teal"} className="text-3xl" />
+                {att.icon}
                 <Stack>
                   <CardBody>
-                    <Heading size="md">+62-856-555-341</Heading>
+                    <Heading size="md">{att.text}</Heading>
                   </CardBody>
                 </Stack>
               </Card>
             </Reveal>
-            <Reveal delay={0.6}>
-              <Card
-                direction={{ base: "column", sm: "row" }}
-                overflow="hidden"
-                variant={"elevated"}
-                w={400}
-                maxH={100}
-                style={{ borderRadius: "20px" }}
-                className="align-middle items-center px-6 py-2"
-              >
-                <IoIosMail color={"teal"} className="text-3xl" />
-                <Stack>
-                  <CardBody>
-                    <Heading size="md">life.global@gmail.com</Heading>
-                  </CardBody>
-                </Stack>
-              </Card>
-            </Reveal>
-            <Reveal delay={0.8}>
-              <Card
-                direction={{ base: "column", sm: "row" }}
-                overflow="hidden"
-                variant={"elevated"}
-                w={400}
-                maxH={100}
-                style={{ borderRadius: "20px" }}
-                className="align-middle items-center px-6 py-2"
-              >
-                <PhoneIcon color={"teal"} className="text-3xl" />
-                <Stack>
-                  <CardBody>
-                    <Heading size="md">021-22839201</Heading>
-                  </CardBody>
-                </Stack>
-              </Card>
-            </Reveal>
-          </div>
-        </Reveal>
+          ))}
+        </div>
       </div>
     </div>
   );

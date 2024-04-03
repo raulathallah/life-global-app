@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   CardBody,
+  CardFooter,
   CardHeader,
   HStack,
   Image,
@@ -29,8 +30,8 @@ export default function Trip() {
   }, []);
 
   return (
-    <div>
-      <VStack className="justify-center">
+    <div className="bg-white h-full">
+      <VStack className="justify-center" style={{ color: "teal" }}>
         <Reveal>
           <div className="w-full text-center my-12 flex flex-col gap-6 items-center">
             <Text className="text-4xl font-bold">Our Trip</Text>
@@ -54,21 +55,16 @@ export default function Trip() {
               <Card
                 key={att.id}
                 w={{ sm: 500 }}
-                h={{ lg: 320, sm: 140 }}
                 borderRadius={"20px"}
                 className="w-[100%]"
-                direction={{ base: "row", lg: "column" }}
-                variant={"elevate"}
+                variant={"outline"}
               >
                 <Image
                   src={att.image}
                   alt={att.image}
                   objectFit={"cover"}
-                  className="lg:h-[100px] w-[200px] lg:w-full"
-                  borderRadius={{
-                    lg: "20px 20px 0 0",
-                    sm: "20px 0px 0px 20px",
-                  }}
+                  className="w-full h-[200px]"
+                  borderRadius="20px 20px 0 0"
                 />
                 <CardBody className="flex flex-col gap-2">
                   <Text
@@ -88,6 +84,8 @@ export default function Trip() {
                       );
                     })}
                   </UnorderedList>
+                </CardBody>
+                <CardFooter>
                   <Text
                     className="text-xl"
                     style={{ color: "teal" }}
@@ -95,7 +93,7 @@ export default function Trip() {
                   >
                     {formatCurrency(att.price)}
                   </Text>
-                </CardBody>
+                </CardFooter>
               </Card>
             ))}
           </div>

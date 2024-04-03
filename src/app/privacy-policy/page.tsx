@@ -2,9 +2,14 @@ import { Text } from "@chakra-ui/react";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="grid gap-8 m-8 p-8">
-      <Text className="font-bold text-5xl text-center"> Privacy Policy</Text>
-      <div className="flex flex-col gap-1">
+    <div className="grid gap-8 m-8 p-8 text-black">
+      <Text
+        className="font-bold text-4xl text-center"
+        style={{ color: "teal" }}
+      >
+        Privacy Policy
+      </Text>
+      <div className="flex flex-col gap-6">
         <Text>
           At Life Global, accessible from lifeglobal.com, one of our main
           priorities is the privacy of our visitors. This Privacy Policy
@@ -15,8 +20,6 @@ export default function PrivacyPolicy() {
           If you have additional questions or require more information about our
           Privacy Policy, do not hesitate to contact us.
         </Text>
-      </div>
-      <div className="flex flex-col gap-1">
         <Text className="text-2xl">Log Files</Text>
         <Text>
           Life Global follows a standard procedure of using log files. These
@@ -33,9 +36,7 @@ export default function PrivacyPolicy() {
             Privacy Policy Generator
           </a>
           .
-        </Text>
-      </div>
-      <div className="flex flex-col gap-1">
+        </Text>{" "}
         <Text className="text-2xl">Cookies and Web Beacons</Text>
         <Text>
           Like any other website, Life Global uses cookies. These cookies are
@@ -52,8 +53,6 @@ export default function PrivacyPolicy() {
           </a>
           .
         </Text>
-      </div>
-      <div className="flex flex-col gap-1">
         <Text className="text-2xl">Google DoubleClick DART Cookie</Text>
         <Text>
           Google is one of a third-party vendor on our site. It also uses
@@ -66,8 +65,6 @@ export default function PrivacyPolicy() {
             https://policies.google.com/technologies/ads
           </a>
         </Text>
-      </div>
-      <div className="flex flex-col gap-1">
         <Text className="text-2xl">Our Advertising Partners</Text>
         <Text>
           Some of advertisers on our site may use cookies and web beacons. Our

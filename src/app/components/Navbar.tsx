@@ -8,12 +8,16 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const router = useRouter();
+  const path = usePathname();
   return (
-    <Box className="grid lg:flex justify-center lg:justify-between gap-8 hover:cursor-pointer p-10">
+    <Box
+      className="grid lg:flex justify-center lg:justify-between gap-8 hover:cursor-pointer px-16 py-4"
+      style={{ backgroundColor: path === "/" ? "transparent" : "teal" }}
+    >
       <div className="place-self-center">
         <Image
           src="/logo-LG.svg"

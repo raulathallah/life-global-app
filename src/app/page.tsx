@@ -26,12 +26,11 @@ import Reveal from "./components/Reveal";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const iconSize = "text-xl";
   const router = useRouter();
   return (
     <div className="w-full">
       <Reveal>
-        <header className="w-full text-center p-36 lg:my-28 flex flex-col gap-12 items-center">
+        <header className="w-full text-center p-36 lg:my-32 flex flex-col gap-12 items-center">
           <TypeAnimation
             sequence={[
               "Holiday?",
@@ -169,45 +168,6 @@ export default function Home() {
           </div>
         </div>
       </Reveal>
-
-      <div className="bg-teal-600 w-full p-8">
-        <div className="flex justify-between w-full lg:px-36">
-          <Image
-            alt={"/logo-LG.svg"}
-            src="/logo-LG.svg"
-            style={{ width: 72 }}
-          />
-
-          <List spacing={3}>
-            <ListItem>
-              <Link href="#">Home</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/trip">Our Trip</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/contact-us">Contact Us</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-            </ListItem>
-          </List>
-          <VStack spacing={6}>
-            <Text>Get in touch</Text>
-            <HStack spacing={3} className="w-full">
-              <Link href="#">
-                <FaInstagram className={iconSize} />
-              </Link>
-              <Link href="#">
-                <FaFacebook className={iconSize} />
-              </Link>
-              <Link href="#">
-                <FaXTwitter className={iconSize} />
-              </Link>
-            </HStack>
-          </VStack>
-        </div>
-      </div>
     </div>
   );
 }
