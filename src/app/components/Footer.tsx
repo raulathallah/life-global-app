@@ -10,7 +10,7 @@ export default function Footer() {
 
         <List spacing={3}>
           <ListItem>
-            <Link href="#">Home</Link>
+            <Link href="/">Home</Link>
           </ListItem>
           <ListItem>
             <Link href="/trip">Our Trip</Link>
@@ -24,7 +24,7 @@ export default function Footer() {
         </List>
         <VStack spacing={6}>
           <Text>Get in touch</Text>
-          <HStack spacing={3} className="w-full">
+          <HStack spacing={24} className="w-full">
             <Link href="#">
               <FaInstagram className={"text-xl"} />
             </Link>
