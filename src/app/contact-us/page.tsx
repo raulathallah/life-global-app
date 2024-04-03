@@ -48,7 +48,7 @@ export default function ContactUs() {
           className="p-2 w-fit"
         >
           {trip.map((att) => (
-            <Reveal delay={0}>
+            <Reveal delay={0} key={att.id}>
               <Image
                 src={att.image}
                 w={300}
